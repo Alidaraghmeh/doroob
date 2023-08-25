@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('image'); // Add 'image' column
             $table->string('name'); // Add 'name' column
+            $table->enum('is_visible', ['is_visible', 'not_visible'])->default('is_visible'); // Set the default value here
             $table->timestamps();
         });
     }

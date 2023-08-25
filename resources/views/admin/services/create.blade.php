@@ -9,7 +9,6 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.services.store') }}" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="section_id" value="{{ $section->id }}">
                             <div class="form-group">
                                 <label for="description">{{ __('الوصف') }}</label>
                                 <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" required style="width: 100%; height: 200px;border:0.5px dotted black">{{ old('description') }}</textarea>
@@ -28,6 +27,7 @@
                                     </span>
                                 @enderror
                             </div>
+                            <input type="hidden" name="section_id" value="{{ $section->id }}">
                             <button type="submit" class="btn btn-primary">{{ __('إضافة') }}</button>
                         </form>
                     </div>

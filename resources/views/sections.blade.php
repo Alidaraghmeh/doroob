@@ -3,7 +3,9 @@
 @section('content')
 <style>
     .rtl-content {
-        background: linear-gradient(to bottom, #297ab0, #ffffff);
+        background-image: url("images/woo.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 500px;
     }
     .image-container {
@@ -33,8 +35,347 @@
     .vv{
         box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6); /* Increased shadow */
     }
-</style>
+    .partners-section {
+    position: relative;
+    height: 300px; /* Adjust the height as needed */
+}
 
+.partners-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay color and opacity */
+    z-index: -1;
+}
+
+/* Add animation to the text */
+.text-center {
+    animation: slide-up 1s ease-in-out;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn-creative {
+        background-color: #17a2b8;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-creative:hover {
+        background-color: #138496;
+        transform: scale(1.05);
+    }
+    .gradient-bg {
+        background: linear-gradient(to left, #1e5799, #2989d8);
+    }
+    .animated {
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+
+    .fadeInDown {
+        animation: fadeInDown 1s ease forwards;
+    }
+
+    .fadeInUp {
+        animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .img-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .img-container img {
+        transition: transform 0.3s;
+    }
+
+    .img-container:hover img {
+        transform: scale(1.1);
+    }
+    /* Custom CSS */
+.section-title {
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.service-card {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 30px;
+    }
+}
+.partner-row {
+    display: flex;
+    flex-wrap: wrap;
+    transition: transform 20s linear infinite;
+    overflow: hidden; /* Hide overflowing content */
+    height: 400px; /* Adjust the container height as needed */
+}
+
+.image-overlay {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Maintain aspect ratio (square) */
+    background-size: cover;
+    background-position: center;
+    animation: loopImages 7s linear infinite;
+}
+
+@keyframes loopImages {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+    
+}
+   
+.custom-image-container {
+    width: 150px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px; /* Add border radius */
+}
+
+.image-transition-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .image-transition-item {
+        margin-right: 10px;
+        width: 150px;
+        overflow: hidden;
+        transition: width 0.8s ease-out;
+    }
+
+    .custom-image-container {
+        position: relative;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-image 0.5s ease-in-out;
+    }
+
+    .image-transition-item img {
+        opacity: 0;
+        max-height: 450px;
+        object-fit: cover;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+   
+    .image-transition-item.active{
+        width: 900px;
+    }
+    .image-transition-item:hover {
+        width: 900px;
+    }
+    
+    .image-transition-item.active.min-width {
+    width: 150px;
+}
+.description-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.image-transition-item:hover .description-overlay {
+    opacity: 1;
+    transform: translateY(-30%);
+}
+.news-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.news-item h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    color: #777;
+}
+.carousel-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.3s;
+}
+
+.carousel-caption h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.carousel-inner:hover .carousel-caption {
+    opacity: 1;
+}
+
+.project-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .project-card-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h5 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 15px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .project-card-text {
+            color: #333;
+        }
+
+        .btn-outline-custom {
+            border-color: #3498db;
+            color: #3498db;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .carousel-indicators {
+    bottom: 0; /* Align indicators to the bottom */
+    display: flex;
+    justify-content: center; /* Center the dots horizontally */
+    margin-bottom: 10px; /* Add some space from the carousel */
+}
+
+.carousel-indicators li {
+    background-color: #ccc; /* Default dot color */
+    border-radius: 50%; /* Make dots circular */
+    width: 12px;
+    height: 12px;
+    margin: 0 5px; /* Space between dots */
+    cursor: pointer;
+}
+
+.carousel-indicators .active {
+    background-color: #007bff; /* Active dot color */
+}
+
+</style>
     @foreach ($sections as $section)
     @if ($section->is_visible === 'is_visible')
     <div class="rtl-content">
@@ -67,84 +408,35 @@
 
 
    
-<section class="start-section arabic">
-
+    <section class="start-section arabic">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="statistics">   
-                        <style>
-       path {
-            fill: blue; /* Change this to the desired color */
-        }
-    </style>
-                        <center>
-                            <svg width="70" height="76" viewBox="0 0 99 76" fill="none" xmlns="http://www.w3.org/2000/svg" class="pp">
-                                <image href="/images/user-solid.svg" width="100%" height="100%" />
-                            </svg>  
-                            <br><br>
-                            <input type="hidden" id="visitors_numbers" value="519521">
-                            <b class="text-color-blue"><sup>+</sup><b id="counter-1" class="fw-bold">48453</b></b>
-                            <br>
-                            <b class="text-color-dark-green">زائر أسبوعياً</b>
-                        </center>
+                @php
+                    $visibleStatistics = $statistics->where('is_visible', 'is_visible');
+                @endphp
+                @if ($visibleStatistics->count() > 0)
+                    <div class="container">
+                        <div class="row">
+                            @foreach ($visibleStatistics as $statistic)
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="fact-item bg-info rounded text-center h-100 p-5 "> <!-- Use the same class as in the first section -->
+                                    <svg width="70" height="76" viewBox="0 0 99 76" fill="blue" class="pp">
+                                        <image href="/images/{{ $statistic->image }}" width="100%" height="100%" />
+                                    </svg>
+                                    <br><br>
+                                    <b class="text-color-blue"><sup>+</sup><b class="fw-bold">{{ $statistic->number }}</b></b>
+                                    <br>
+                                    <b class="text-color-dark-green">{{ $statistic->name }}</b>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="statistics">  
-                        <center>
-                            <svg width="50" height="77" viewBox="0 0 55 77" fill="none" xmlns="http://www.w3.org/2000/svg" class="pp" >
-                                <path d="M51.2952 27.8147C51.325 23.5043 50.2005 19.2646 48.0384 15.5356C45.8763 11.8066 42.7556 8.72431 39 6.60869C35.2445 4.49307 30.9911 3.42125 26.6815 3.50451C22.3719 3.58776 18.1631 4.82305 14.492 7.08214C10.821 9.34123 7.82161 12.5418 5.80518 16.3515C3.78875 20.1612 2.82882 24.4412 3.02504 28.7471C3.22125 33.0531 4.56647 37.2281 6.92103 40.8386C11.1256 47.286 13.6149 49.6561 13.6149 57.3287C13.6149 58.0403 13.8976 58.7228 14.4008 59.226C14.904 59.7292 15.5864 60.0118 16.298 60.0118H37.9966C38.7082 60.0118 39.3907 59.7292 39.8939 59.226C40.397 58.7228 40.6797 58.0403 40.6797 57.3287C40.6797 49.4711 43.4644 47.1385 47.6412 40.4556C50.0111 36.6638 51.2765 32.2861 51.2952 27.8147Z" fill="#E4F2D3" stroke="#52B788" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M19.7843 73.5L34.5108 73.5" stroke="#52B788" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>
-                            <br><br>
-                            <input type="hidden" id="projects_numbers" value="413">
-                            <b class="text-color-blue"><sup>+</sup><b id="counter-2" class="fw-bold">413</b></b>
-                            <br>
-                            <b class="text-color-dark-green">مشروع منفذ</b>
-                        </center>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="statistics">  
-                        <center>
-                            <svg width="70" height="76" viewBox="0 0 99 76" fill="blue" xmlns="http://www.w3.org/2000/svg" class="pp">
-                                <image href="/images/users-solid.svg" width="100%" height="100%" />
-                                <style>
-                                     {
-                                        fill:blue; /* Change this to the desired color */
-                                    }
-                                </style>
-                            </svg>
-                            <br><br>
-                            <input type="hidden" id="students_numbers" value="7959">
-                            <b class="text-color-blue"><sup>+</sup><b id="counter-3" class="fw-bold">7959</b></b>
-                            <br>
-                            <b class="text-color-dark-green">طالب</b>
-                        </center>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="statistics">                    
-                        <center>
-                            <svg width="70" height="76" viewBox="0 0 82 76" fill="none" xmlns="http://www.w3.org/2000/svg" class="pp">
-                                <path d="M0.72777 44.9181C-0.354056 46.173 -0.213737 48.0673 1.04118 49.1491C2.2961 50.231 4.1904 50.0906 5.27223 48.8357L0.72777 44.9181ZM76.205 48.8357C77.2868 50.0906 79.1812 50.231 80.4361 49.1491C81.691 48.0673 81.8313 46.173 80.7495 44.9181L76.205 48.8357ZM39.9812 3.97869L37.709 2.01987L39.9812 3.97869ZM41.496 3.97869L43.7683 2.01987L41.496 3.97869ZM5.27223 48.8357L42.2534 5.93751L37.709 2.01987L0.72777 44.9181L5.27223 48.8357ZM39.2238 5.93751L76.205 48.8357L80.7495 44.9181L43.7683 2.01987L39.2238 5.93751ZM42.2534 5.93751C41.4556 6.86301 40.0216 6.86301 39.2238 5.93751L43.7683 2.01987C42.1726 0.168884 39.3047 0.168888 37.709 2.01987L42.2534 5.93751Z" fill="#52B788"></path>
-                                <path d="M14.6124 33.4388L39.9804 3.88404C40.3794 3.41913 41.0989 3.41913 41.498 3.88404L66.8659 33.4388L69.3606 51.2355C69.6313 53.1671 69.6181 55.128 69.3212 57.0558L67.127 71.3042C66.9768 72.2797 66.1374 72.9998 65.1503 72.9998H16.328C15.341 72.9998 14.5016 72.2797 14.3513 71.3042L12.1572 57.0558C11.8603 55.128 11.847 53.1671 12.1178 51.2355L14.6124 33.4388Z" fill="#E4F2D3"></path>
-                                <path d="M14.6124 33.4388L12.336 31.4848C11.9622 31.9203 11.7212 32.4539 11.6415 33.0223L14.6124 33.4388ZM66.8659 33.4388L69.8369 33.0223C69.7572 32.4539 69.5162 31.9203 69.1424 31.4848L66.8659 33.4388ZM69.3606 51.2355L66.3896 51.6519L69.3606 51.2355ZM39.9804 3.88404L37.704 1.9301L39.9804 3.88404ZM41.498 3.88404L43.7744 1.9301L41.498 3.88404ZM67.127 71.3042L70.0921 71.7608L67.127 71.3042ZM65.1503 69.9998H16.328V75.9998H65.1503V69.9998ZM16.8889 35.3927L42.2568 5.83799L37.704 1.9301L12.336 31.4848L16.8889 35.3927ZM39.2216 5.83799L64.5895 35.3927L69.1424 31.4848L43.7744 1.9301L39.2216 5.83799ZM63.895 33.8552L66.3896 51.6519L72.3315 50.819L69.8369 33.0223L63.895 33.8552ZM66.3561 56.5992L64.162 70.8476L70.0921 71.7608L72.2862 57.5124L66.3561 56.5992ZM17.3164 70.8476L15.1222 56.5992L9.19212 57.5124L11.3863 71.7608L17.3164 70.8476ZM15.0888 51.6519L17.5834 33.8552L11.6415 33.0223L9.14685 50.819L15.0888 51.6519ZM15.1222 56.5992C14.8699 54.9606 14.8586 53.2938 15.0888 51.6519L9.14685 50.819C8.83547 53.0404 8.85072 55.2954 9.19212 57.5124L15.1222 56.5992ZM66.3896 51.6519C66.6198 53.2938 66.6085 54.9606 66.3561 56.5992L72.2862 57.5124C72.6276 55.2954 72.6429 53.0404 72.3315 50.819L66.3896 51.6519ZM42.2568 5.83799C41.4587 6.76782 40.0197 6.76782 39.2216 5.83799L43.7744 1.9301C42.1782 0.0704424 39.3002 0.0704446 37.704 1.9301L42.2568 5.83799ZM16.328 69.9998C16.8216 69.9998 17.2413 70.3598 17.3164 70.8476L11.3863 71.7608C11.7618 74.1996 13.8604 75.9998 16.328 75.9998V69.9998ZM65.1503 75.9998C67.6179 75.9998 69.7165 74.1996 70.0921 71.7608L64.162 70.8476C64.2371 70.3598 64.6568 69.9998 65.1503 69.9998V75.9998Z" fill="#52B788"></path>
-                                <path d="M40.7395 44.5742C46.3006 44.5742 50.8088 49.0824 50.8088 54.6435V72.9991H30.6702V54.6435C30.6702 49.0824 35.1784 44.5742 40.7395 44.5742Z" fill="white" stroke="#52B788" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>    
-                            <br><br>
-                            <input type="hidden" id="schools_numbers" value="243">
-                            <b class="text-color-blue"><sup>+</sup><b id="counter-4" class="fw-bold">243</b></b>
-                            <br>
-                            <b class="text-color-dark-green">مدرسة</b>
-                        </center>
-                    </div>
-                </div>
+                @endif
             </div>
         </div>
     </section>
-
+    
     
     <div class="container">
         <div class="row">
@@ -153,22 +445,28 @@
                     $visibleServices = $services->where('is_visible', 'is_visible');
                 @endphp
                 @if ($visibleServices->count() > 0)
-                    <div class="container text-center">
-                        <h1>خدمات الانتاج</h1>
+                    <div class="container text-center mt-5">
+                        <h1 class="display-4">خدمات الإنتاج</h1>
                     </div>
-                    <br><br>
+                    <hr class="my-4">
                     <div class="container">
                         <div class="row">
                             @foreach ($visibleServices as $service)
                             <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
-                                <div class="card vv" style="height: 100%;">
+                                <div class="solution-card text-right"> <!-- Added 'text-right' class -->
                                     @if ($service->gif)
                                     <img src="{{ asset('images/' . $service->gif) }}" class="card-img-top rounded" alt="{{ $service->name }}">
                                     @endif
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ $service->title }}</h5>
-                                        <p class="card-text">{{ $service->description }}</p>
+                                        <p class="text-color-blue">{{ $service->name }}</p>
+                                        <p class="text-color-blue">{{ $service->description }}</p>
                                     </div>
+                                    <center class="mt-4">
+                                        <a class="text-decoration-none text-color-light-green fw-bold" href="{{ $service->link }}">
+                                            إعرف أكثر
+                                            <i class="bi bi-arrow-left"></i>
+                                        </a>
+                                    </center>
                                 </div>
                             </div>
                             @endforeach
@@ -179,48 +477,59 @@
         </div>
     </div>
     
-        
-        
+    
     <br><br>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 @php
                     $visibleNews = $news->where('is_visible', 'is_visible');
                 @endphp
                 @if ($visibleNews->count() > 0)
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px;">
-                        <div class="container text-center">
-                            <h1>أخبار قسم الانتاج</h1>
-                        </div>
-                        <ol class="carousel-indicators">
-                            @foreach ($visibleNews as $index => $new)
-                                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"></li>
-                            @endforeach
-                        </ol>
-                        <div class="carousel-inner" style="height: 80%;">
+                    <div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel" style="border-radius: 15px;">
+                        <div class="carousel-inner" style="height: 60%;">
                             @foreach ($visibleNews as $index => $new)
                                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                    <img class="d-block w-100" src="{{ asset('images/' . $new->image) }}" style="max-height: 350px; object-fit: cover;">
+                                    <div class="carousel-image" style="background-image: linear-gradient(0deg , rgba(83, 223, 255, 0.268), rgba(153, 112, 112, 0.476)), url('{{ asset('images/' . $new->image) }}');"></div>
+                                    <div class="carousel-caption">
+                                        <h2>{{ $new->name }}</h2>
+                                        <p>{{ $new->description }}</p>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
+                            <i class="fas fa-chevron-left"></i>
                         </a>
                         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
+                            <i class="fas fa-chevron-right"></i>
                         </a>
                     </div>
                 @endif
+            </div>
+            <div class="col-md-6">
+                <div class="container mt-5 news-section" style="height: 60%;">
+                    <div class="row">
+                        @foreach ($visibleNews->take(3)->reverse() as $new)
+                        <div class="col-md-12 news-item text-right">
+                            <div class="d-flex align-items-center"> <!-- Use flexbox to align items horizontally -->
+                                <img src="{{ asset('images/' . $new->image) }}" style="width: 90px; height:90px; object-fit:cover; margin-right: 15px;border-radius:9px;">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div>
+                                    <h2>{{ $new->name }}</h2>
+                                    <p>{{ $new->description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
 <br><br>
-
 
 
 <div class="container">
@@ -228,92 +537,122 @@
         <div class="col-md-12">
             @php
                 $visibleBusinesses = $busnisses->where('is_visible', 'is_visible');
+                $businessCount = $visibleBusinesses->count();
             @endphp
-            @if ($visibleBusinesses->count() > 0)
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px;">
-                    <div class="container text-center">
-                        <h1>معرض أعمال الانتاج</h1>
-                    </div>
-                    <ol class="carousel-indicators">
-                        @foreach ($visibleBusinesses as $index => $business)
-                            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"></li>
-                        @endforeach
-                    </ol>
-                    <div class="carousel-inner" style="height: 80%;">
-                        @foreach ($visibleBusinesses as $index => $business)
-                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                <img class="d-block w-100" src="{{ asset('images/' . $business->image) }}" style="max-height: 350px; object-fit: cover;">
-                            </div>
-                        @endforeach
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            @endif
-        </div>
-    </div>
-</div>
-
-<br><br>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            @php
-                $visibleProjects = $projects->where('is_visible', 'is_visible');
-            @endphp
-            @if ($visibleProjects->count() > 0)
+            @if ($businessCount > 0)
                 <div class="container text-center">
-                    <h1>مشاريعنا في الانتاج</h1>
+                    <h1>معرض أعمال الانتاج</h1>
                 </div>
-                <br><br>
-                <div class="container">
-                    <div class="row">
-                        @foreach ($visibleProjects as $project)
-                            <div class="col-xl-3 col-lg-4 col-md-6">
-                                <div class="academy-card">
-                                    <div class="academy-card-image" style="background-image: url('{{ asset('images/' . $project->image) }}'); width: 100%; height: 200px;">
-                                        <h5 class="text-color-light-green fw-bold me-4">{{ $project->name }}</h5>
-                                        <div class="academy-card-overley"></div>
-                                    </div>
-                                    <div class="academy-card-info">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <!-- Video duration and views -->
-                                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <!-- SVG content -->
-                                                </svg>
-                                                01:29 <!-- Replace with actual video duration -->
-                                            </div>
-                                            <div class="col-6">
-                                                <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <!-- SVG content -->
-                                                </svg>
-                                                56 <!-- Replace with actual views -->
-                                            </div>
-                                        </div>
-                                        <p class="text-color-blue academy-card-text fw-bold me-3">
-                                            {{ $project->description }} <!-- Replace with project description -->
-                                        </p>
-                                        <center class="mt-4">
-                                            <button class="text-center btn gradient-btn w-75" onclick="showVideo({{ $project->id }})">اطلع على المشروع </button>
-                                        </center>
+                <div class="image-transition-container">
+                    @foreach ($visibleBusinesses as $index => $business)
+                        <div class="image-transition-item {{ $index === ($businessCount/2) ? 'active' : '' }}">
+                            <div class="custom-image-container" style="background-image: url('{{ asset('images/' . $business->image) }}')" data-name="{{ $business->name }}" data-description="{{ $business->description }}">
+                                <img src="{{ asset('images/' . $business->image) }}" alt="{{ $business->name }}">
+                                <div class="description-overlay">
+                                    <div class="description-content" style="color: white; text-align: right;"> <!-- Set text-align to right -->
+                                        <h2 style="color: white; text-align: right;">{{$business->name}}</h2>
+                                        <p style="text-align: right;">{{$business->description}}</p>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             @endif
         </div>
     </div>
 </div>
 
+
 <br><br>
+
+
+<div class="container">
+    <div class="row">
+        @php
+            $visibleProjects = $projects->where('is_visible', 'is_visible');
+        @endphp
+        @if ($visibleProjects->count() > 0)
+            <div class="container text-center mt-5">
+                <h1 class="display-4">مشاريعنا في الإنتاج</h1>
+            </div>
+            <hr class="my-4">
+            <div class="container">
+                <div class="row">
+                    @foreach ($visibleProjects as $project)
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                            <div class="solution-card text-center">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="circle-image">
+                                        <img src="{{ asset('images/' . $project->image) }}" alt="{{ $project->name }}" class="rounded-circle" width="50" height="50">
+                                    </div>&nbsp;&nbsp;&nbsp;
+                                    <h5 class="text-color-light ms-2">{{ $project->name }}</h5>
+                                </div>
+                                <p class="text-color-blue project-card-text fw-bold">
+                                    {{ $project->description }} 
+                                </p>
+                                <center class="mt-4">
+                                    <button class="btn btn-light btn-outline-info w-75" style="border-radius: 10px;" onclick="showProject({{ $project->id }})">
+                                      اطلع على المشروع
+                                    </button>
+                                </center>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+    </div>
+</div>
+
+<br><br>
+
+
+
+<div class="container">
+    <div class="row partner-row">
+        @php
+            $visiblePartners = $partners->where('is_visible', 'is_visible');
+        @endphp
+        @if ($visiblePartners->count() > 0)    
+            <div class="container mt-3 text-center" style="position: relative; z-index: 1;">
+                <h1 class="display-4">شركاؤنا</h1>
+                <a href="{{ route('partners') }}" class="btn bt-light mt-3  btn-outline-info" >الشركاء</a></div>
+            <div class="container" style="position: relative; z-index: 0; opacity:0.7;">
+                <div class="row">
+                    @foreach ($visiblePartners as $partner)
+                        <div class="col-md-3 mb-3">
+                            <div class="image-overlay" style="background-image: none; width: 100%; height: 100%; ">
+                                <img src="{{ asset('images/' . $partner->image) }}" alt="{{ $partner->name }}" style="width: 100%; height: 100%;">
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        var activeItem = $(".image-transition-item.active");
+
+        $(".image-transition-item").on("mouseenter", function () {
+            // Set width to 900px for the hovered item
+            $(this).css("width", "900px");
+            
+            // Set width to 150px for all other items except the active item and the hovered item
+            $(".image-transition-item").not(this).css("width", "150px");
+        }).on("mouseleave", function () {
+            // Reset width to 900px for all items
+            $(".image-transition-item").css("width", "150px");
+            
+            // Set width to 150px for the active item
+            activeItem.css("width", "900px");
+        });
+    });
+</script>
 
 @endsection

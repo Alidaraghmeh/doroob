@@ -7,6 +7,8 @@ use App\Models\Service;
 use App\Models\News; // Import the Section model
 use App\Models\Business;
 use App\Models\Project;
+use App\Models\Statistic;
+use App\Models\Partner;
 
 class SectionController extends Controller
 {
@@ -18,8 +20,10 @@ class SectionController extends Controller
         $news = News::all();
         $busnisses = Business::all();
         $projects = Project::all();
+        $statistics = Statistic::all();
+        $partners = Partner::all();
 
         // Pass the sections data to a view for rendering using compact
-        return view('sections', compact('sections','services','news','busnisses','projects'));
+        return view('sections', compact('sections','services','news','busnisses','projects','statistics','partners'));
     }
 }

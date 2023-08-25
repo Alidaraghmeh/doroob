@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('services', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('section_id');
+            $table->unsignedBigInteger('section_id')->nullable();
             $table->foreign('section_id')
             ->references('id')
             ->on('sections')

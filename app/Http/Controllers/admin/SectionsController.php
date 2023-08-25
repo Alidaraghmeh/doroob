@@ -28,7 +28,7 @@ class SectionsController extends Controller
             'name' => 'required',
             'description' => 'required',
             'gifs' => 'nullable|array',
-            'gifs.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', 
+            'gifs.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
         ]);
     
         $section = new Section();
@@ -39,7 +39,7 @@ class SectionsController extends Controller
             $imageUrls = [];
     
             foreach ($request->file('gifs') as $image) {
-                $imageName = time() . '_' . $image->getClientOriginalName();
+                $imageName =  $image->getClientOriginalName();
                 $image->move('storage/images', $imageName);
                 $imageUrls[] = $imageName;
             }
@@ -64,7 +64,7 @@ class SectionsController extends Controller
             'name' => 'required',
             'description' => 'required',
             'gifs' => 'nullable|array',
-            'gifs.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // ضبط أنواع الملفات والحجم الأقصى حسب الحاجة
+            'gifs.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // ضبط أنواع الملفات والحجم الأقصى حسب الحاجة
         ]);
 
         $section = Section::findOrFail($id);

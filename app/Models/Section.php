@@ -34,5 +34,8 @@ class Section extends Model
 {
     return $this->hasMany(News::class);
 }
-
+public function statistics()
+{
+    return $this->hasMany(Statistic::class);
+}
 }

@@ -25,8 +25,10 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // Add other validation rules for other columns if needed
+            'name' => 'required',
+            'description' => 'required',
         ]);
         $validatedData['section_id'] = $request->input('section_id');
 
@@ -52,7 +54,7 @@ class NewsController extends Controller
 public function update(Request $request, $id)
 {
     $data = $request->validate([
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
     $news = News::findOrFail($id);

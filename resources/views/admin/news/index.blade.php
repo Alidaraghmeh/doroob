@@ -19,7 +19,11 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>
-                            <img src="{{ asset('images/' .$news->image) }}" alt="{{ $news->title }}" style="max-width: 100px; max-height: 100px;">
+                        @if ($news->image)
+                        <img src="{{ asset('images/' .$news->image) }}" alt="{{ $news->title }}" style="max-width: 100px; max-height: 100px;">    
+                        @else
+                        <img src="{{ asset('images/noimage.jpg') }}" alt="{{ $news->name }}" style="max-width: 100px; max-height: 100px;">
+                        @endif
                         </td>
                         <td>
                             <a href="{{ route('admin.news.edit', $news->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>

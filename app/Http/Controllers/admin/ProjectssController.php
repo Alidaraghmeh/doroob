@@ -26,7 +26,7 @@ class ProjectssController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $validatedData['section_id'] = $request->input('section_id');
@@ -54,7 +54,7 @@ class ProjectssController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $project = Project::findOrFail($id);

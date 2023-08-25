@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('statistics', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('section_id')->nullable();
+            $table->unsignedBigInteger('section_id');
             $table->foreign('section_id')
             ->references('id')
             ->on('sections')
@@ -31,7 +31,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('statistics', function (Blueprint $table) {
             //
         });
     }

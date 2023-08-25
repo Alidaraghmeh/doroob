@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('statistics', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Add 'name' column
-            $table->text('description'); // Add 'description' column
-            $table->string('gif'); // Add 'gif' column
+            $table->string('image');
+            $table->string('name');
+            $table->integer('number');
             $table->enum('is_visible', ['is_visible', 'not_visible'])->default('is_visible'); // Set the default value here
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sections');
+        Schema::dropIfExists('statistics');
     }
 };

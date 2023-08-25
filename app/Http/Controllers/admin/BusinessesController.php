@@ -18,7 +18,8 @@ class BusinessesController extends Controller
     public function create($section_id)
 {
     $section = Section::find($section_id);
-    return view('admin.businesses.create', compact('section', 'section_id'));
+    // dd($section);
+    return view('admin.businesses.create', compact('section'));
 }
 
 
@@ -27,7 +28,7 @@ class BusinessesController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $validatedData['section_id'] = $request->input('section_id');
 
@@ -55,7 +56,7 @@ class BusinessesController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $business = Business::findOrFail($id);

@@ -9,7 +9,7 @@ class News extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image',"section_id"];
+    protected $fillable = ['name', 'image',"section_id",'description'];
 
     public function section()
     {

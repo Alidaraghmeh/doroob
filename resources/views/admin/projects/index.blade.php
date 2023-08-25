@@ -26,7 +26,7 @@
                             @if ($project->image)
                                 <img src="{{ asset('images/' .$project->image) }}" alt="{{ $project->name }}" style="max-width: 100px; max-height: 100px;">
                             @else
-                                لا يوجد صورة
+                            <img src="{{ asset('images/noimage.jpg') }}" alt="{{ $news->name }}" style="max-width: 100px; max-height: 100px;">
                             @endif
                         </td>
                         <td>

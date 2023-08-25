@@ -43,7 +43,7 @@
                                             @endforeach
                                         </div>
                                     @else
-                                        <p>لا يوجد صورة</p>
+                                    <img src="{{ asset('images/noimage.jpg') }}" alt="{{ $news->name }}" style="max-width: 100px; max-height: 100px;">
                                     @endif
                                     
                                     <div class="mt-3">

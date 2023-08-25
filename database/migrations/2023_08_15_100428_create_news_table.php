@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('image'); // Add 'image' column
+            $table->string('image'); 
+            $table->enum('is_visible', ['is_visible', 'not_visible'])->default('is_visible'); // Set the default value here
+            // Add 'image' column
+            $table->string('name'); 
+            $table->string('description'); 
             $table->timestamps();
         });
     }

@@ -6,7 +6,6 @@
         <form method="POST" action="{{ route('admin.projects.store') }}" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="section_id" value="{{ $section->id }}">
-
             <div class="form-group">
                 <label for="name">الاسم:</label>
                 <input type="text" class="form-control" id="name" name="name" required>

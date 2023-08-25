@@ -5,7 +5,7 @@
         <h1>انشاء معرض أعمال</h1>
         <form method="POST" action="{{ route('admin.businesses.store') }}" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="section_id" value="{{ $section->id }}">
+            <input type="display" name="section_id" value="{{ $section->id }}">
 
             <div class="form-group">
                 <label for="name">الاسم:</label>

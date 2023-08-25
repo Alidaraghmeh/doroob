@@ -6,7 +6,9 @@
 <div class="alert alert-success">{{ session('success') }}</div>
 @endif
 <h1>الأعمال</h1>
-<a  href="{{ route('admin.businesses.create', ['section_id' => $section->id]) }}" class="btn btn-success float-right">إضافة عمل جديد</a>
+@if (isset($section))
+<a href="{{ route('admin.businesses.create', ['section_id' => $section->id]) }}" class="btn btn-success float-right">إضافة عمل جديد</a>
+@endif
 <table class="table mt-3">
        <thead>
            <tr>

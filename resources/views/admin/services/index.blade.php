@@ -58,7 +58,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="mb-0">{{ __('قائمة الخدمات') }}</h4>
-                        <a href="{{ route('admin.services.create', ['section_id' => $section_id]) }}" class="btn btn-success float-right">إضافة خدمة</a>
+                        <a href="{{ route('admin.services.create', ['section_id' => $section->id]) }}" class="btn btn-success float-right">إضافة خدمة</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -80,10 +80,10 @@
                                                 @if ($service->gif)
                                                     <img src="{{ asset('images/' . $service->gif) }}" alt="{{ $service->description }}" class="table-image">
                                                 @else
-                                                    <span class="no-image">لا يوجد صورة</span>
+                                                <img src="{{ asset('images/noimage.jpg') }}" alt="{{ $news->name }}" style="max-width: 100px; max-height: 100px;">
                                                 @endif
                                             </td>
-                                            
+  
                                             <td class="action-cell">
                                                 <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i> تعديل</a>
                                                 <form action="{{ route('admin.services.destroy', $service->id) }}" method="POST" class="inline-form">

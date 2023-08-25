@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Section;
-use Illuminate\Support\Facades\DB;
 
 
 class ServicesController extends Controller
@@ -17,18 +16,18 @@ class ServicesController extends Controller
         return view('admin.services.index', compact('services'));
     }
 
-  public function create($section_id)
-{
-    $section = Section::find($section_id);
-    return view('admin.services.create', ['section' => $section]);
-}
-
-
+    public function create($section_id)
+    {
+        $section = Section::find($section_id);
+        return view('admin.services.create', compact('section'));
+    }
+    
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'description' => 'required',
-            'gif' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gif' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
         $validatedData['section_id'] = $request->input('section_id');
@@ -56,7 +55,7 @@ class ServicesController extends Controller
     {
         $data = $request->validate([
             'description' => 'required',
-            'gif' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the mime types and max size as needed
+            'gif' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $service = Service::findOrFail($id);
@@ -86,10 +85,10 @@ class ServicesController extends Controller
 
     public function sectionServices($section_id)
 {
-    // Retrieve the section
+    
     $section = Section::findOrFail($section_id);
 
-    // Retrieve services related to the section
+   
     $services = $section->services;
 
     return view('admin.services.index', compact('services', 'section'));
@@ -138,6 +137,29 @@ public function updateSectionNewsVisibility(Request $request, $section_id)
     }
 
     return back()->with('success', 'تم تحديث حالة الأخبار في القسم بنجاح.');
+}
+public function updateSectionPartnersVisibility(Request $request, $section_id)
+{
+    $section = Section::findOrFail($section_id);
+    $visibility = $request->visibility;
+
+    if ($visibility === 'is_visible' || $visibility === 'not_visible') {
+        $section->partners()->update(['is_visible' => $visibility]);
+    }
+
+    return back()->with('success', 'تم تحديث حالة الشركاء في القسم بنجاح.');
+}
+
+public function updateSectionStatisticsVisibility(Request $request, $section_id)
+{
+    $section = Section::findOrFail($section_id);
+    $visibility = $request->visibility;
+
+    if ($visibility === 'is_visible' || $visibility === 'not_visible') {
+        $section->statistics()->update(['is_visible' => $visibility]);
+    }
+
+    return back()->with('success', 'تم تحديث حالة الإحصائيات في القسم بنجاح.');
 }
 
 }
